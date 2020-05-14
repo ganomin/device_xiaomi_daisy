@@ -78,6 +78,7 @@ persist.camera.isp.clock.optmz=0 \
 persist.camera.stats.test=5 \
 persist.vendor.qti.telephony.vt_cam_interface=2 \
 vidc.enc.dcvs.extra-buff-count=2 \
+persist.camera.HAL3.enabled=1 \
 persist.vendor.camera.HAL3.enabled=1 \
 vendor.camera.lowpower.record.enable=1 \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.huaqin.factory,org.lineageos.snap \
@@ -88,7 +89,7 @@ vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.huaq
 # Cne/Dpm
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.cne.feature=1 \
-persist.dpm.feature=0
+persist.vendor.dpm.feature=0
 
 # Coresight
 persist.debug.coresight.config=stm-events \
@@ -168,7 +169,6 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 vendor.vidc.enc.disable_bframes=1 \
-vendor.video.disable.ubwc=1 \
 vendor.display.enable_default_color_mode=1 \
 vendor.gralloc.enable_fb_ubwc=1 \
 vendor.video.disable.ubwc=1
@@ -214,7 +214,7 @@ persist.vendor.radio.apm_sim_not_pwdn=1 \
 persist.radio.multisim.config=dsds \
 persist.radio.VT_ENABLE=1 \
 persist.radio.volte.dan_support=true \
-persist.sys.cust.lte_config=true z \
+persist.sys.cust.lte_config=true \
 persist.vendor.radio.custom_ecc=1 \
 persist.vendor.radio.jbims=1 \
 persist.vendor.radio.rat_on=combine \
@@ -250,6 +250,7 @@ debug.sf.early_gl_app_phase_offset_ns=15000000
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true \
+persist.vendor.delta_time.enable=true \
 persist.delta_time.enable=true
 
 # Tcp
@@ -266,10 +267,7 @@ persist.vendor.usb.config.extra=none
 
 # USB debugging
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.sys.usb.config=mtp,adb \
-ro.adb.secure=0 \
-ro.secure=0 \
-ro.debuggable=1
+persist.sys.usb.config=mtp
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -289,3 +287,11 @@ persist.vendor.audio.speaker.prot.enable=false \
 persist.vendor.data.profile_update=true \
 persist.vendor.radio.prefer_spn=1 \
 vendor.audio.offload.passthrough=false
+
+# Thermal configs path
+PRODUCT_PROPERTY_OVERRIDES += \
+sys.thermal.data.path=/data/vendor/thermal/
+
+# Rescue party
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.disable_rescue=true

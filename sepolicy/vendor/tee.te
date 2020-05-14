@@ -12,3 +12,4 @@ set_prop(tee, system_prop)
 
 allow tee block_device:blk_file { getattr open read write };
 allow tee system_file:file { execute getattr open read };
+allow tee unlabeled:file { read write };

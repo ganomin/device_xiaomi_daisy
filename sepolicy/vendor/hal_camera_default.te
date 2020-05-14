@@ -16,3 +16,4 @@ allow hal_camera_default vendor_default_prop:file r_file_perms;
 allow hal_camera_default vendor_default_prop:sock_file r_file_perms;
 allow hal_camera_default vendor_default_prop:property_service set;
 allow hal_camera_default default_prop:property_service { set };
+allow hal_camera_default default_prop:file { read open getattr map };

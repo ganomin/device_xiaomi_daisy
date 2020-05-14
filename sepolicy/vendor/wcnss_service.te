@@ -10,3 +10,4 @@ allow wcnss_service sysfs:file { open read };
 allow wcnss_service serialno_prop:file { read };
 allow wcnss_service serialno_prop:file open;
 allow wcnss_service serialno_prop:file getattr;
+allow wcnss_service vendor_default_prop:property_service { set };

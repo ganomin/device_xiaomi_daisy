@@ -145,10 +145,14 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
         $(LOCAL_PATH)/configs/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
-# Bluetooth
+# Bluetooth / A2DP
 PRODUCT_PACKAGES += \
     libbluetooth_qti \
-    libbt-logClient.so
+    libbt-logClient.so \
+    libldacBT_dec \
+    audio.a2dp.default \
+    android.hardware.bluetooth.a2dp@1.0-impl \
+    android.hardware.bluetooth.a2dp@1.0-service
 
 # Boot SPL
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
@@ -162,7 +166,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.postproc@1.0
 
 # Codec2
 PRODUCT_PACKAGES += \
@@ -204,7 +209,8 @@ PRODUCT_PACKAGES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiParts \
+    XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -219,13 +225,15 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
-# FM
+# FM 
 PRODUCT_PACKAGES += \
     FM2 \
-    libqcomfm_jni
+    libqcomfm_jni \
+    qcom.fmradio \
+    qcom.fmradio.xml
 
 PRODUCT_BOOT_JARS += \
-    qcom.fmradio
+    qcom.fmradio 
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -311,7 +319,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_c2_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_c2_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
 # Netutils
 PRODUCT_PACKAGES += \
@@ -332,11 +342,6 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
-
-# Perf
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
 
 # Pre-opt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \

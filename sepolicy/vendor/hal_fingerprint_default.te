@@ -91,3 +91,5 @@ allow hal_fingerprint_default sysfs_battery_supply:file { open read };
 allow hal_fingerprint_default sysfs_leds:dir search;	
 allow hal_fingerprint_default sysfs_leds:file { open read };
 binder_call(hal_fingerprint_default, goodix_fingerprint_vndservice);
+allow hal_fingerprint_default default_android_hwservice:hwservice_manager { add };
+allow hal_fingerprint_default sdcardfs:dir { add_name };

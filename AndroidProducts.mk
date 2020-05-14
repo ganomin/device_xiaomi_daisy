@@ -15,9 +15,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_daisy.mk
+    $(LOCAL_DIR)/xtended_daisy.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_daisy-user \
-    lineage_daisy-userdebug \
-    lineage_daisy-eng
+    xtended_daisy-user \
+    xtended_daisy-userdebug \
+    xtended_daisy-eng
