@@ -1,4 +1,4 @@
-# Device Tree for Xiaomi Redmi 6 Pro (sakura)
+# Device Tree for Xiaomi Mi A2 Lite (daisy)
 
 ## Spec Sheet
 
