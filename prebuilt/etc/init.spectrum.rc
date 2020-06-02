@@ -49,10 +49,10 @@ write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
 # Battery
 on property:persist.spectrum.profile=2
 # Configure governor settings for little cluster
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "blu_schedutil"
 
 # Configure governor settings for big cluster
-write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "powersave"
+write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "blu_schedutil"
 
 # Configure freq
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq "652800"
