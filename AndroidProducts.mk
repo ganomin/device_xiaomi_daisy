@@ -1,4 +1,3 @@
-
  
 #
 # Copyright (C) 2017-2018 The LineageOS Project
@@ -16,9 +15,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/stag_daisy.mk
+    $(LOCAL_DIR)/xtended_daisy.mk
 
 COMMON_LUNCH_CHOICES := \
-    stag_daisy-user \
-    stag_daisy-userdebug \
-    stag_daisy-eng
+    xtended_daisy-user \
+    xtended_daisy-userdebug \
+    xtended_daisy-eng
