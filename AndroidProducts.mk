@@ -15,9 +15,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/xtended_daisy.mk
+    $(LOCAL_DIR)/aosp_daisy.mk
 
 COMMON_LUNCH_CHOICES := \
-    xtended_daisy-user \
-    xtended_daisy-userdebug \
-    xtended_daisy-eng
+    aosp_daisy-user \
+    aosp_daisy-userdebug \
+    aosp_daisy-eng
